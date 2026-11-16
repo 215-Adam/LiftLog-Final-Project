@@ -59,9 +59,12 @@ cmp baseline_report.txt optimized_report.txt && echo "outputs identical"
 Correctness check against the hand-verified test:
 
 ```bash
-./baseline tests/tiny.csv | diff - tests/tiny_expected.txt
-./optimized tests/tiny.csv | diff - tests/tiny_expected.txt
+./baseline tests/tiny.csv | diff --strip-trailing-cr - tests/tiny_expected.txt && echo "baseline OK"
+./optimized tests/tiny.csv | diff --strip-trailing-cr - tests/tiny_expected.txt && echo "optimized OK"
 ```
+
+(`--strip-trailing-cr` ignores the `\r\n` line endings that Windows writes to
+stdout; on Linux/macOS it makes no difference.)
 
 ## Running the benchmarks
 
