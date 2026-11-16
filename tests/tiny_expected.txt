@@ -1,0 +1,5 @@
+user 1: total_volume=3440.0 best_week=1 week_volume=1360.0
+  Back Squat: e1rm=233.33 pr=200.0 volume=1000.0 sets=1
+  Bench Press: e1rm=133.33 pr=120.0 volume=2440.0 sets=3
+user 2: total_volume=2300.0 best_week=1 week_volume=2300.0
+  Deadlift: e1rm=316.67 pr=300.0 volume=2300.0 sets=2
