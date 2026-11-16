@@ -127,6 +127,7 @@ Median of 9 timed runs (10 runs, first discarded), both built with
 
 At 5M sets the stats loop alone went from 8,066 ms to 73 ms (≈110×); the
 remaining optimized time is almost all text parsing (`strtok`/`sscanf`/`atof`),
-which is the next optimization target. Full write-up, per-phase numbers and the
-Compiler Explorer assembly comparison are in
-`docs/Final Project MVP - Adam Elrhanjaoui.docx`.
+which is the next optimization target. The full write-up (per-phase numbers and
+the Compiler Explorer assembly comparison) is submitted separately; the
+Compiler Explorer screenshots are in `docs/img/` and the assembly listings in
+`asm/`.

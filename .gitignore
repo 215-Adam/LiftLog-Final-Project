@@ -54,3 +54,6 @@ results/
 # Local benchmark logs
 bench_*.log
 phases_*.txt
+
+# Analysis document is submitted separately
+*.docx
