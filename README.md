@@ -112,4 +112,18 @@ optimized: sets=1000000 load_ms=... process_ms=... cleanup_ms=... total_ms=... m
 
 ## Results (MVP)
 
-RESULTS_PLACEHOLDER
+Median of 9 timed runs (10 runs, first discarded), both built with
+`gcc -O2 -Wall`, 10,000 users, Windows 11 / TDM-GCC 10.3:
+
+| Sets | Baseline (ms) | Optimized (ms) | Speedup | mallocs (baseline → optimized) |
+|---:|---:|---:|---:|---|
+| 100,000 | 201.1 | 105.7 | 1.90× | 366,855 → 6 |
+| 500,000 | 1,261.7 | 481.5 | 2.62× | 1,377,201 → 6 |
+| 1,000,000 | 4,437.0 | 1,114.6 | 3.98× | 2,407,393 → 6 |
+| 5,000,000 | 16,180.1 | 4,017.9 | 4.03× | 10,410,001 → 6 |
+
+At 5M sets the stats loop alone went from 8,066 ms to 73 ms (≈110×); the
+remaining optimized time is almost all text parsing (`strtok`/`sscanf`/`atof`),
+which is the next optimization target. Full write-up, per-phase numbers and the
+Compiler Explorer assembly comparison are in
+`docs/Final Project MVP - Adam Elrhanjaoui.docx`.
